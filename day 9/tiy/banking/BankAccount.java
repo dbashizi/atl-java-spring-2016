@@ -15,10 +15,21 @@ public class BankAccount {
 		System.out.println("============================="); 
 	}
 
-	public void deposit(double amountToDeposit) { 
-		balance = balance + amountToDeposit; 
+	public void deposit(double amountToDeposit, boolean justKidding) { 
+		if (justKidding == true) { 
+			System.out.println("Not depositing any money for jokesters!"); 
+		} else { 
+			balance = balance + amountToDeposit; 
+		}
 	}
 
-	public void withdraw() { 
+	public void withdraw(double amountToWithdraw) { 
+		if (amountToWithdraw > balance) { 
+			System.out.println("You broke!"); 
+		} else { 
+			System.out.println("You about to be broke if you withdraw $" + amountToWithdraw); 
+			System.out.println("But you also the boss, so here you go!"); 
+			balance = balance - amountToWithdraw; 
+		}
 	}
 }
